@@ -30,8 +30,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'hdima/python-syntax'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'godlygeek/tabular'
+" Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'godlygeek/tiireabular'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -44,6 +44,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'mattn/emmet-vim' 
 "Plugin 'powerman/vim-plugin-viewdoc'
 
 " All of your Plugins must be added before the following line
@@ -272,7 +273,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:UltiSnipsExpandTrigger="<c-e>"
 
 " for ptyhon
-autocmd FileType python setlocal textwidth=80
+" autocmd FileType python setlocal textwidth=80
 autocmd BufNewFile *.py 0put =\"# -*- coding: utf-8 -*-\<nl>\"|$
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
@@ -305,3 +306,7 @@ inoremap jk <esc>
 set linespace=20
 nnoremap <leader>j :bn<cr>
 nnoremap <leader>k :bp<cr>
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
