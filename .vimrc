@@ -201,7 +201,7 @@ let NERDShutUp=1
 autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.cc,*.py,*.json,*.proto :%s/\s\+$//e
 
 " doxygen settings
-let g:DoxygenToolkit_authorName="Sean Xue"
+let g:DoxygenToolkit_authorName="nico"
 let g:DoxygenToolkit_licenseTag=""
 let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
 let g:DoxygenToolkit_briefTag_pre = "@brief "
