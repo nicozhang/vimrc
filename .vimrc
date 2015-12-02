@@ -299,7 +299,7 @@ let g:tagbar_type_proto= {
     \ 'scope2kind': {
     \ }
 \ }
-nnoremap jk <esc>
+:imap jk <Esc>
 "set cursorline
 "set mouse=a
 "Set line space
