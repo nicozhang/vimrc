@@ -44,7 +44,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'mattn/emmet-vim' 
+Plugin 'mattn/emmet-vim'
+Plugin 'huobazi/conque' " split bash
 "Plugin 'powerman/vim-plugin-viewdoc'
 
 " All of your Plugins must be added before the following line
