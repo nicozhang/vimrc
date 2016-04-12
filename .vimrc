@@ -45,6 +45,7 @@ Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim' 
+Plugin 'huobazi/conque' 
 "Plugin 'powerman/vim-plugin-viewdoc'
 
 " All of your Plugins must be added before the following line
@@ -188,7 +189,10 @@ let g:winManagerWindowLayout='BufExplorer,FileExplorer'
 let g:winManagerWidth=30
 "let g:persistentBehaviour=0
 nmap wm :WMToggle<cr>
-nmap <F6> :WMToggle<cr>
+"nmap <F6> :WMToggle<cr>
+
+"NERD tree 
+nmap <F6> :NERDTreeToggle<cr>
 
 " tagbar settings
 let g:tagbar_width=30
@@ -228,6 +232,8 @@ map <leader>nh :nohl<CR>
 map <leader>nn :set nonumber<CR>
 map <leader>q :quit<CR>
 map <leader>qa :quitall<CR>
+map <leader>sp :set paste<CR>
+map <leader>np :set nopaste<CR>
 nmap Q :q<CR>
 nmap QA :qa<CR>
 
