@@ -44,8 +44,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'mattn/emmet-vim'
-Plugin 'huobazi/conque' " split bash
+Plugin 'mattn/emmet-vim' 
+Plugin 'huobazi/conque' 
 "Plugin 'powerman/vim-plugin-viewdoc'
 
 " All of your Plugins must be added before the following line
@@ -122,6 +122,8 @@ set softtabstop=4
 set autoindent 
 set smartindent
 set nofoldenable
+
+set foldmethod=indent
 
 set mouse=v "catch mouse TODO set variant from OSs
 
@@ -281,6 +283,7 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 " for ptyhon
 " autocmd FileType python setlocal textwidth=80
 autocmd BufNewFile *.py 0put =\"# -*- coding: utf-8 -*-\<nl>\"|$
+autocmd BufNewFile *.html 0r ~/.vim/template/html/htmlconfig.html 
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
 
@@ -316,3 +319,4 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
