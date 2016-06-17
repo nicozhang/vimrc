@@ -1,4 +1,4 @@
-"set runtimepath=/home/seanxue/cfg/vim,$VIMRUNTIME
+"set runtimepath=/home/seanxue/cfg/vim,$vimruntime
 "source /home/seanxue/cfg/vim/.vimrc
 
 set nocompatible              " be iMproved, required
@@ -46,6 +46,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim' 
 Plugin 'huobazi/conque' 
+Plugin 'vim-ruby/vim-ruby'
 "Plugin 'powerman/vim-plugin-viewdoc'
 
 " All of your Plugins must be added before the following line
@@ -55,7 +56,6 @@ filetype plugin indent on    " required
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -280,12 +280,16 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:UltiSnipsExpandTrigger="<c-e>"
 
-" for ptyhon
+" for python
 " autocmd FileType python setlocal textwidth=80
 autocmd BufNewFile *.py 0put =\"# -*- coding: utf-8 -*-\<nl>\"|$
 autocmd BufNewFile *.html 0r ~/.vim/template/html/htmlconfig.html 
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
+
+" for ruby 
+" autocmd FileType python setlocal textwidth=80
+autocmd BufNewFile *.rb 0put =\"#!/usr/bin/ruby -w \<nl>\# -*- coding: utf-8 -*-\<nl>\"|$
 
 " for indent guides
 let g:indent_guides_enable_on_vim_startup = 1  " 默认关闭
