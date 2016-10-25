@@ -3,6 +3,9 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+filetype indent on            " 针对不同的文件类型采用不同的缩进格式
+filetype plugin on            " 针对不同的文件类型加载对应的插件
+filetype plugin indent on     " 启用自动补全
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -21,7 +24,7 @@ Plugin 'vim-scripts/tlib'
 Plugin 'vim-scripts/python_match.vim'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe' "need manual install dependings
 Plugin 'Raimondi/delimitMate'
@@ -47,7 +50,12 @@ Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim' 
 Plugin 'huobazi/conque' 
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'slim-template/vim-slim'
 "Plugin 'powerman/vim-plugin-viewdoc'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'tpope/vim-rails'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -312,7 +320,7 @@ let g:tagbar_type_proto= {
     \ 'scope2kind': {
     \ }
 \ }
-:imap jk <Esc>
+imap jk <Esc>
 "set cursorline
 "set mouse=a
 "Set line space
@@ -323,4 +331,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" ruby add end afer func or condition
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'"
 
