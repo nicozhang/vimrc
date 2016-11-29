@@ -337,3 +337,13 @@ let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'"
 
+map <F4> <Esc>:%!python -m json.tool<CR>
+
+nnoremap <leader>pp :set paste<cr>
+nnoremap <leader>np :set nopaste<cr>
+
+autocmd FileType javascript,html,css,xml,ruby set ai
+autocmd FileType javascript,html,css,xml,ruby set sw=2
+autocmd FileType javascript,html,css,xml,ruby set ts=2
+autocmd FileType javascript,html,css,xml,ruby set sts=2
+
