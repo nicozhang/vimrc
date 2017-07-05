@@ -34,7 +34,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'hdima/python-syntax'
 " Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'godlygeek/tiireabular'
+Plugin 'godlygeek/tabular'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -56,6 +56,10 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tpope/vim-rails'
+Plugin 'vim-scripts/VisIncr'
+Plugin 'mileszs/ack.vim'
+"Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-haml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -134,10 +138,12 @@ set nofoldenable
 set foldmethod=indent
 
 set mouse=v "catch mouse TODO set variant from OSs
+set guifont=Menlo\ Regular:h14
 
 if has("gui_running")
   set background=dark
-  colorscheme peaksea
+  " colorscheme peaksea
+  colorscheme desert
 else
   set background=dark
   colorscheme desert
@@ -281,7 +287,7 @@ endfunction
 " completation
 set completeopt=longest,menu,menuone,preview
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-let g:ycm_key_list_select_completion = ['<TAB>', '<Enter>', 'Down']
+let g:ycm_key_list_select_completion = ['<Enter>', 'Down']
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -321,10 +327,10 @@ let g:tagbar_type_proto= {
     \ }
 \ }
 imap jk <Esc>
-"set cursorline
+set cursorline
 "set mouse=a
 "Set line space
-set linespace=20
+"set linespace=8
 nnoremap <leader>j :bn<cr>
 nnoremap <leader>k :bp<cr>
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -342,8 +348,13 @@ map <F4> <Esc>:%!python -m json.tool<CR>
 nnoremap <leader>pp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
 
-autocmd FileType javascript,html,css,xml,ruby set ai
-autocmd FileType javascript,html,css,xml,ruby set sw=2
-autocmd FileType javascript,html,css,xml,ruby set ts=2
-autocmd FileType javascript,html,css,xml,ruby set sts=2
+autocmd FileType javascript,html,css,xml,ruby,json set ai
+autocmd FileType javascript,html,css,xml,ruby,json set sw=2
+autocmd FileType javascript,html,css,xml,ruby,json set ts=2
+autocmd FileType javascript,html,css,xml,ruby,json set sts=2
+
+command! JsonFormat :execute '%!python -m json.tool'
+  \ | :execute '%!python -c "import re,sys;chr=__builtins__.__dict__.get(\"unichr\", chr);sys.stdout.write(re.sub(r\"\\\\u[0-9a-f]{4}\", lambda x: chr(int(\"0x\" + x.group(0)[2:], 16)).encode(\"utf-8\"), sys.stdin.read()))"'
+  \ | :set ft=javascript
+  \ | :1
 
